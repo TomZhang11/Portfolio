@@ -16,41 +16,32 @@ const NavBar = () => {
     ];
 
     useEffect(() => {
-        // Create observer for hero section
-        const heroObserver = new IntersectionObserver(
-            ([entry]) => setIsHeroVisible(entry.isIntersecting),
-            { threshold: 0.1 }
-        );
-
-        // Create observer for other sections with modified options
-        const sectionObserver = new IntersectionObserver(
-            (entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting && entry.intersectionRatio >= 0.2) {
-                        setActiveSection(entry.target.id);
-                    }
-                });
-            },
-            { 
-                threshold: [0, 0.2, 0.4, 0.6, 0.8, 1],
-                rootMargin: '-20% 0px -20% 0px'
+        const handleScroll = () => {
+            // Check hero visibility
+            const hero = document.querySelector('header');
+            if (hero) {
+                setIsHeroVisible(window.scrollY < hero.offsetHeight);
             }
-        );
 
-        // Observe hero
-        const hero = document.querySelector('header');
-        if (hero) heroObserver.observe(hero);
+            // Find current section
+            const currentSection = sections.find(({ id }) => {
+                const element = document.getElementById(id);
+                if (element) {
+                    const rect = element.getBoundingClientRect();
+                    return rect.top <= 150 && rect.bottom > 150;
+                }
+                return false;
+            });
 
-        // Observe all sections
-        sections.forEach(({ id }) => {
-            const element = document.getElementById(id);
-            if (element) sectionObserver.observe(element);
-        });
-
-        return () => {
-            heroObserver.disconnect();
-            sectionObserver.disconnect();
+            if (currentSection) {
+                setActiveSection(currentSection.id);
+            }
         };
+
+        window.addEventListener('scroll', handleScroll);
+        handleScroll(); // Initial check
+
+        return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     const scrollToSection = (id) => {
