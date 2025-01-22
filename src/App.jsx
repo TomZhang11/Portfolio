@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Hero from './components/Hero'
 import Main from './components/Main'
 import Footer from './components/Footer'
-import NavBar from './components/NavBar'
 
 function App() {
   return (
@@ -10,7 +9,6 @@ function App() {
       <header>
         <Hero />
       </header>
-      <NavBar />
       <Main />
       <Footer />
     </div>
