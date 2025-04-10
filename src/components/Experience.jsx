@@ -20,7 +20,7 @@ const Experience = () => {
             {/* High School Section */}
             <ExperienceSection title={experiences.highSchool.title} items={experiences.highSchool.items} />
 
-            {/* Resume Button */}
+            {/* Resume and Transcript Buttons */}
             <div className="mt-10">
                 <a
                     href="/resume.pdf"
@@ -30,6 +30,16 @@ const Experience = () => {
                         transition-all duration-300 hover:scale-105 hover:bg-[#a8a4b5] text-gray-600"
                 >
                     View Full Resume
+                </a>
+
+                <a
+                    href="/transcript.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center px-6 py-3 bg-white rounded-lg shadow-md hover:shadow-lg 
+                        transition-all duration-300 hover:scale-105 hover:bg-[#a8a4b5] text-gray-600 ml-4"
+                >
+                    View Transcript
                 </a>
             </div>
         </section>
