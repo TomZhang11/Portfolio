@@ -40,8 +40,7 @@ const Skills = () => {
             <h2 className="text-3xl mb-8 font-semibold font-serif italic text-[#faa289]">Skills</h2>
             <div className="mx-auto mb-8 max-w-6xl">
                 <p className="text-lg text-gray-600 leading-relaxed">
-                    Despite learning philosophy in my free time, I am a very competent software engineer. I like to create
-                    visually appealing and algorithmically intensive websites and applications.
+                    I am a very competent software engineer. I like to create visually appealing and algorithmically intensive websites and applications.
                 </p>
             </div>
 

@@ -15,13 +15,13 @@ import Contacts from './Contacts'
 const Main = () => {
     return (
         <main className="min-h-screen">
+            <Skills />
+            <Experience />
             <Intro />
             <About />
             <Thoughts />
             <Role_Models />
             <Books />
-            <Skills />
-            <Experience />
             <Contacts />
         </main>
     )
