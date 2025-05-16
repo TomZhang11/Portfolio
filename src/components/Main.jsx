@@ -17,11 +17,11 @@ const Main = () => {
         <main className="min-h-screen">
             <Skills />
             <Experience />
-            <Intro />
+            {/* <Intro />
             <About />
             <Thoughts />
             <Role_Models />
-            <Books />
+            <Books /> */}
             <Contacts />
         </main>
     )
