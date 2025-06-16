@@ -99,7 +99,7 @@ const Hero = ({ darkMode }) => {
             <span className={`absolute bottom-4 right-4 text-xs transition-colors duration-300 ${
                 darkMode ? 'text-gray-400' : 'text-gray-300'
             }`}>
-                Last updated 2025-01-21
+                Last updated 2025-06-16
             </span>
         </section>
     )

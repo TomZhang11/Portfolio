@@ -7,12 +7,6 @@ const About = () => {
                     I'm an {new Date().getFullYear() - 2007} years old guy in tech who sometimes get
                     absorbed in thoughts regarding psychology, religion, and philosophy.
                 </p>
-                <p className="text-lg text-gray-600 leading-relaxed mt-4">
-                    Currently, I am quite confused about what I want to do with my life. I sometimes
-                    read philosophy, but I still haven't found a purpose that sticks with me. At times
-                    I am unsure about how I "should" act, and I wish there is someone "wise" who can
-                    answer my questions.
-                </p>
             </div>
         </section>
     )
