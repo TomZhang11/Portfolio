@@ -124,12 +124,7 @@ const Books = () => {
             
             <div className="mx-auto mb-6 max-w-6xl">
                 <p className="text-lg text-[#0d1721] leading-relaxed">
-                    In the past, most people can't easily access books. The difference between the information era and the
-                    past is that we now have too much information. So the question lies within how to filter out garbage
-                    information. Try to read books that are either written by established people, or proven by experience.
-                    Books like the Bible and Tao Te Ching are proven by thousands of years of experience. They would have
-                    ceased to exist at some point in history if they have not true worth. Except when learning the latest
-                    technology, then you would want to have the latest information. Here are some books that I have read:
+                    Here are some books that I have read:
                 </p>
             </div>
 
