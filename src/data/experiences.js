@@ -2,8 +2,7 @@ export const experiences = {
     current: {
         title: "What I'm up to now (2025)",
         description: "Currently focusing on deepening my knowledge in programming and working on personal projects. Looking\
-        for employment in Summer 2025 (May-August). Looking for the right cofounder with the right ideas and skills to\
-        start whatever business."
+        for employment in Summer 2025 (May-August)."
     },
     university: {
         title: "University Year 1 (2024-2025)",
