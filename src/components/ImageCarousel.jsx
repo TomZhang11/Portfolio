@@ -64,4 +64,4 @@ export const ImageCarousel = ({ images }) => {
             )}
         </div>
     );
-}; 
+};
