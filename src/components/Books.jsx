@@ -25,7 +25,7 @@ const Books = () => {
             first, he refused to repent, as he considered it unfair that he was sent to prison for killing a useless and\
             cynical old woman. There were even a genuine distrust and hostility between him and the rest of the inmates\
             because he considered them unsophisticated fools and were inferior to him. Ruskonikov had a dream of a virus,\
-            which causes its victims to think that they are the sole possessors of truth. However, this does not lead to\
+            which causes its victims to believe that they are the sole possessors of truth. However, this does not lead to\
             freedom. People try to impose their views on others, and society tears apart. Without religion to provide an\
             objective view of morality, it is the strongest who imposes their views on everyone. A part of the reason why\
             dictators like Hilter, Stalin, and Mao Zedong could succeed is because of the atheism at their time. In the\
@@ -45,7 +45,7 @@ const Books = () => {
             am a spiteful man. I am an unattractive man. I believe my liver is diseased. I refuse to consult a doctor from\
             spite. That you probably will not understand. My liver is bad. Well, let it get worse!" These are the words\
             of the Underground Man. Out of pure boredom, the Underground Man has created a hell for himself, and for others\
-            around him. He destroys and betrays himself, for nothing. Why does Dostoevsky portray such a dark character? To warn us of utopia: the Underground Man writes,\
+            around him. He destroys and betrays himself, for nothing. Why does Dostoevsky portray such a dark character? To explore the dark/irrational parts of the human psyche: the Underground Man writes,\
             "man is by no means a rational animal, but innately irrational and destructive. The best definition of a man\
             is the ungrateful biped. He would sacrifice all his happiness, wealth, health, or security, just to choose\
             for himself in order to preserve his individuality. Shower upon men every Earthly blessing, crown him in a\
