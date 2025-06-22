@@ -4,9 +4,9 @@ const Skills = ({ darkMode }) => {
     const [hoveredSkill, setHoveredSkill] = useState(null)
 
     const proficiency = {
-        expert: ["React", "Python", "Cursor"],
-        intermediate: ["HTML", "CSS", "JavaScript", "Tailwind CSS", "Chrome DevTools", 
-                        "C", "SQL", "Bash", "Linux", "Git"],
+        expert: ["React", "Python", "Cursor", "JavaScript"],
+        intermediate: ["HTML", "CSS", "Tailwind CSS", "Chrome DevTools", 
+                        "C/C++", "SQL", "Bash", "Linux", "Git"],
         beginner: ["Node.js", "Express", "MySQL", "MongoDB"]
     };
 
@@ -38,7 +38,7 @@ const Skills = ({ darkMode }) => {
         backend: {
             title: "Back End",
             skills: {
-                languages: ["JavaScript", "Python", "SQL", "C", "Bash"],
+                languages: ["JavaScript", "Python", "SQL", "C/C++", "Bash"],
                 frameworks: ["Node.js", "Express"],
                 tools: ["Git", "Linux", "MySQL", "MongoDB", "Cursor"]
             }
@@ -60,7 +60,7 @@ const Skills = ({ darkMode }) => {
                 <p className={`text-lg leading-relaxed transition-colors duration-300 ${
                     darkMode ? 'text-gray-300' : 'text-gray-600'
                 }`}>
-                    I am a very competent software engineer. I like to create visually appealing and algorithmically intensive websites and applications.
+                    I like writing clean code, developing easy-to-use UI, and creating algorithms.
                 </p>
             </div>
 

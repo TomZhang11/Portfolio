@@ -2,13 +2,13 @@ export const experiences = {
     current: {
         title: "What I'm up to now (2025)",
         description: "Currently focusing on deepening my knowledge in programming and working on personal projects. Looking\
-        for employment in Summer 2025 (May-August)."
+        for employment in Fall 2025 (Sep 2025 - Dec 2025)."
     },
     university: {
         title: "University Year 1 (2024-2025)",
         items: [
             {
-                title: "Junior Software Engineer, Krachi's Space Technologies (Dec 2024 - Jan 2025)",
+                title: "Junior Software Engineer, Krachi's Space Technologies (Sep 2024 - Dec 2024)",
                 details: "Worked as a full-stack developer at a software company and was responsible for both client-side\
                 and server-side development.",
                 images: ["/exp.png", "/exp-1.png"]
