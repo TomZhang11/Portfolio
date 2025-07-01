@@ -128,9 +128,7 @@ const Contacts = ({ darkMode }) => {
             const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
-                to_email: 'tomzhang.canada888@gmail.com',
                 message: formData.message,
-                reply_to: formData.email
             }
             
             await emailjs.send(
