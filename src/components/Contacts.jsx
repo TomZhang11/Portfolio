@@ -1,4 +1,6 @@
 import { useState } from 'react'
+import emailjs from '@emailjs/browser'
+import { emailjsConfig } from '../config/emailjs'
 
 const Contacts = ({ darkMode }) => {
     const [formData, setFormData] = useState({
@@ -81,9 +83,7 @@ const Contacts = ({ darkMode }) => {
             errors.name = 'Name is required'
         }
         
-        if (!formData.email.trim()) {
-            errors.email = 'Email is required'
-        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+        if (formData.email.trim() && !/\S+@\S+\.\S+/.test(formData.email)) {
             errors.email = 'Email is invalid'
         }
         
@@ -122,13 +122,27 @@ const Contacts = ({ darkMode }) => {
         }
         
         setIsSubmitting(true)
+        setSubmitStatus(null)
         
-        // Simulate form submission
         try {
-            await new Promise(resolve => setTimeout(resolve, 2000))
+            const templateParams = {
+                from_name: formData.name,
+                from_email: formData.email,
+                to_email: 'tomzhang.canada888@gmail.com',
+                message: formData.message,
+                reply_to: formData.email
+            }
+            
+            await emailjs.send(
+                emailjsConfig.serviceID, 
+                emailjsConfig.templateID, 
+                templateParams, 
+                emailjsConfig.publicKey
+            )
             setSubmitStatus('success')
             setFormData({ name: '', email: '', message: '' })
         } catch (error) {
+            console.error('EmailJS error:', error)
             setSubmitStatus('error')
         } finally {
             setIsSubmitting(false)
@@ -191,7 +205,7 @@ const Contacts = ({ darkMode }) => {
                 <h3 className={`text-2xl font-semibold mb-6 ${
                     darkMode ? 'text-white' : 'text-gray-800'
                 }`}>
-                    Send me a message
+                    Send me any message (currently working)
                 </h3>
                 
                 {submitStatus === 'success' && (
@@ -234,7 +248,7 @@ const Contacts = ({ darkMode }) => {
                         <label className={`block text-sm font-medium mb-2 ${
                             darkMode ? 'text-gray-200' : 'text-gray-700'
                         }`}>
-                            Email *
+                            Email
                         </label>
                         <input
                             type="email"
