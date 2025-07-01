@@ -3,6 +3,8 @@ import emailjs from '@emailjs/browser'
 import { emailjsConfig } from '../config/emailjs'
 
 const Contacts = ({ darkMode }) => {
+    const debug = false;
+
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -83,7 +85,9 @@ const Contacts = ({ darkMode }) => {
             errors.name = 'Name is required'
         }
         
-        if (formData.email.trim() && !/\S+@\S+\.\S+/.test(formData.email)) {
+        if (!formData.email.trim()) {
+            errors.email = 'Email is required'
+        } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
             errors.email = 'Email is invalid'
         }
         
@@ -112,6 +116,43 @@ const Contacts = ({ darkMode }) => {
         }
     }
 
+    const getTimeBasedGreeting = () => {
+        const hour = new Date().getHours();
+        if (hour < 12) return "Good morning";
+        if (hour < 18) return "Good afternoon";
+        return "Good evening";
+    }
+
+    const sendAutoReply = async (userName, userEmail) => {
+        try {
+            const autoReplyParams = {
+                name: userName,
+                email: userEmail,
+                greeting: getTimeBasedGreeting(),
+                current_time: new Date().toLocaleString(),
+            }
+
+            if (debug) {
+                console.log('Auto-reply params:', autoReplyParams)
+                console.log('Template ID:', emailjsConfig.autoReplyTemplateID)
+                console.log('Service ID:', emailjsConfig.serviceID)
+                console.log('Public Key:', emailjsConfig.publicKey)
+            }
+            
+            await emailjs.send(
+                emailjsConfig.serviceID,
+                emailjsConfig.autoReplyTemplateID,
+                autoReplyParams,
+                emailjsConfig.publicKey
+            )
+
+            return { success: true, message: 'Auto-reply sent successfully' }
+        } catch (error) {
+            console.error('Auto-reply email failed:', error)
+            return { success: false, error: error.message }
+        }
+    }
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         const errors = validateForm()
@@ -125,18 +166,27 @@ const Contacts = ({ darkMode }) => {
         setSubmitStatus(null)
         
         try {
+            // Send the main contact email to you
             const templateParams = {
                 from_name: formData.name,
                 from_email: formData.email,
                 message: formData.message,
             }
             
-            await emailjs.send(
-                emailjsConfig.serviceID, 
-                emailjsConfig.templateID, 
-                templateParams, 
-                emailjsConfig.publicKey
-            )
+            if (debug) {
+                console.log(templateParams)
+            } else {
+                await emailjs.send(
+                    emailjsConfig.serviceID, 
+                    emailjsConfig.templateID, 
+                    templateParams, 
+                    emailjsConfig.publicKey
+                ) 
+            }
+
+            // Send auto-reply to user
+            await sendAutoReply(formData.name, formData.email)
+
             setSubmitStatus('success')
             setFormData({ name: '', email: '', message: '' })
         } catch (error) {
@@ -246,7 +296,7 @@ const Contacts = ({ darkMode }) => {
                         <label className={`block text-sm font-medium mb-2 ${
                             darkMode ? 'text-gray-200' : 'text-gray-700'
                         }`}>
-                            Email
+                            Email *
                         </label>
                         <input
                             type="email"

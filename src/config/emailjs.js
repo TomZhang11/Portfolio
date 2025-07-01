@@ -10,6 +10,7 @@
 export const emailjsConfig = {
     serviceID: 'service_zb44yac',        // Your EmailJS service ID
     templateID: 'template_sh42hzd',      // Your EmailJS template ID  
+    autoReplyTemplateID: 'template_rh6qt4l', // Your auto-reply template ID (create this)
     publicKey: 'jQ8NuUeI6rBvQrtdx'       // Your EmailJS public key
 }
 
