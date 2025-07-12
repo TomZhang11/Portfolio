@@ -28,8 +28,8 @@ export const experiences = {
             },
             {
                 title: "Google Minesweeper Solver (May 2023)",
-                details: "Created an AI that solves Google's Minesweeper Game (hard mode) within 15 seconds.",
-                link: "https://github.com/TomZhang11/Minesweeper-AI",
+                details: "Created an AI that solves Google's Minesweeper Game within 15 seconds.",
+                link: "https://github.com/TomZhang11/MinesweeperAI",
                 images: ["/ms.png", "/ms.mp4"]
             }
         ]
