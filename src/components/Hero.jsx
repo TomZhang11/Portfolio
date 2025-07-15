@@ -57,14 +57,7 @@ const Hero = ({ darkMode }) => {
                             Software Engineer • React Developer • Problem Solver
                         </span>
                     </div>
-                    
-                    {/* Current time display */}
-                    <div className={`text-sm mb-8 transition-colors duration-300 ${
-                        darkMode ? 'text-gray-400' : 'text-gray-300'
-                    }`}>
-                        Current time: {currentTime.toLocaleTimeString()}
-                    </div>
-                    
+
                     {/* Call to action button */}
                     <button
                         onClick={scrollToNext}
