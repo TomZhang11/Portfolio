@@ -6,6 +6,9 @@ const Experience = () => {
         <section id="experience" className="px-4 py-10 max-w-7xl mx-auto text-center border-t-4 border-gray-300">
             <h2 className="text-3xl mb-8 font-semibold font-serif italic text-[#faa289]">Experience/Projects</h2>
 
+            {/* University Year 2 Section */}
+            <ExperienceSection title={experiences.universityYear2.title} items={experiences.universityYear2.items} />
+
             {/* Current Section */}
             <div className="mb-8">
                 <h3 className="text-2xl font-serif text-[#678d96] mb-4">{experiences.current.title}</h3>

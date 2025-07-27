@@ -15,6 +15,16 @@ export const experiences = {
             }
         ]
     },
+    universityYear2: {
+        title: "University Year 2 (2025-2026)",
+        items: [
+            {
+                title: "Software Developer Intern, Microart Services Inc. (Sep 2025 - Dec 2025)",
+                details: "Incoming internship in Fall 2025. I will be using python to develop software.",
+                images: []
+            }
+        ]
+    },
     highSchool: {
         title: "High School Era (2023-2024)",
         items: [
