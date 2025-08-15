@@ -9,7 +9,7 @@ import Skills from './Skills'
 import Experience from './Experience'
 import Contacts from './Contacts'
 
-const Main = ({ darkMode, activeSection, setActiveSection }) => {
+const Main = () => {
     const [isVisible, setIsVisible] = useState({})
 
     // Intersection Observer for fade-in animations
@@ -49,23 +49,21 @@ const Main = ({ darkMode, activeSection, setActiveSection }) => {
         }`
 
     return (
-        <main className={`min-h-screen pt-16 transition-colors duration-300 ${
-            darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'
-        }`}>
+        <main className="min-h-screen bg-white text-gray-900">
             <div id="skills" className={sectionClassName('skills')}>
-                <Skills darkMode={darkMode} />
+                <Skills />
             </div>
             
             <div id="experience" className={sectionClassName('experience')}>
-                <Experience darkMode={darkMode} />
+                <Experience />
             </div>
             
             <div id="books" className={sectionClassName('books')}>
-                <Books darkMode={darkMode} />
+                <Books />
             </div>
             
             <div id="contacts" className={sectionClassName('contacts')}>
-                <Contacts darkMode={darkMode} />
+                <Contacts />
             </div>
         </main>
     )

@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function Footer({ darkMode }) {
+function Footer() {
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   const scrollToTop = () => {
@@ -18,18 +18,14 @@ function Footer({ darkMode }) {
   }, [])
 
   return (
-    <footer className={`py-6 mt-auto transition-colors duration-300 ${
-      darkMode ? 'bg-gray-800 text-gray-300' : 'bg-gray-800 text-white'
-    }`}>
+    <footer className="py-6 mt-auto bg-gray-800 text-white">
       <div className="container mx-auto text-center px-4">
         <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
           <div>
             <p className="text-sm md:text-base">
               © {new Date().getFullYear()} Tom Zhang. All rights reserved.
             </p>
-            <p className={`text-xs mt-1 transition-colors duration-300 ${
-              darkMode ? 'text-gray-400' : 'text-gray-400'
-            }`}>
+            <p className="text-xs mt-1 text-gray-400">
               Built with React & Tailwind CSS
             </p>
           </div>
@@ -38,11 +34,7 @@ function Footer({ darkMode }) {
           {showScrollTop && (
             <button
               onClick={scrollToTop}
-              className={`p-2 rounded-full transition-all duration-300 transform hover:scale-110 ${
-                darkMode 
-                  ? 'bg-gray-700 hover:bg-gray-600 text-gray-300' 
-                  : 'bg-gray-700 hover:bg-gray-600 text-white'
-              }`}
+              className="p-2 rounded-full transition-all duration-300 transform hover:scale-110 bg-gray-700 hover:bg-gray-600 text-white"
               aria-label="Scroll to top"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -2,7 +2,7 @@ import { useState } from 'react'
 import emailjs from '@emailjs/browser'
 import { emailjsConfig } from '../config/emailjs'
 
-const Contacts = ({ darkMode }) => {
+const Contacts = () => {
     const debug = false;
 
     const [formData, setFormData] = useState({
@@ -198,20 +198,12 @@ const Contacts = ({ darkMode }) => {
     }
 
     return (
-        <section id="contacts" className={`px-4 py-10 max-w-7xl mx-auto text-center border-t-4 transition-colors duration-300 ${
-            darkMode 
-                ? 'border-gray-600 bg-gray-800' 
-                : 'border-gray-300 bg-white'
-        }`}>
-            <h2 className={`text-3xl mb-8 font-semibold font-serif italic transition-colors duration-300 ${
-                darkMode ? 'text-orange-400' : 'text-[#faa289]'
-            }`}>
+        <section id="contacts" className="px-4 py-10 max-w-7xl mx-auto text-center border-t-4 border-gray-300 bg-white">
+            <h2 className="text-3xl mb-8 font-semibold font-serif italic text-[#faa289]">
                 Contacts
             </h2>
             
-            <p className={`text-lg leading-relaxed mb-12 max-w-2xl mx-auto transition-colors duration-300 ${
-                darkMode ? 'text-gray-300' : 'text-gray-600'
-            }`}>
+            <p className="text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-gray-600">
                 I am always open to chat, with anyone.
             </p>
 
@@ -223,23 +215,14 @@ const Contacts = ({ darkMode }) => {
                         href={contact.link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`flex flex-col items-center justify-center p-4 rounded-lg shadow-md 
-                            hover:shadow-lg transition-all duration-300 hover:scale-105 transform ${
-                            darkMode 
-                                ? 'bg-gray-700 hover:bg-gray-600' 
-                                : 'bg-white hover:bg-[#a8a4b5]'
-                        }`}
+                        className="flex flex-col items-center justify-center p-4 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover:scale-105 transform bg-white hover:bg-[#a8a4b5]"
                         onMouseEnter={() => setHoveredContact(index)}
                         onMouseLeave={() => setHoveredContact(null)}
                     >
-                        <div className={`transition-all duration-300 ${
-                            darkMode ? 'text-gray-300' : 'text-gray-600'
-                        } ${hoveredContact === index ? contact.color : ''}`}>
+                        <div className={`transition-all duration-300 text-gray-600 ${hoveredContact === index ? contact.color : ''}`}>
                             {contact.icon}
                         </div>
-                        <span className={`mt-2 text-sm font-medium transition-colors duration-300 ${
-                            darkMode ? 'text-gray-300' : 'text-gray-600'
-                        }`}>
+                        <span className="mt-2 text-sm font-medium text-gray-600">
                             {contact.name}
                         </span>
                     </a>
@@ -247,12 +230,8 @@ const Contacts = ({ darkMode }) => {
             </div>
 
             {/* Contact Form */}
-            <div className={`max-w-2xl mx-auto p-8 rounded-lg shadow-lg ${
-                darkMode ? 'bg-gray-700' : 'bg-gray-50'
-            }`}>
-                <h3 className={`text-2xl font-semibold mb-6 ${
-                    darkMode ? 'text-white' : 'text-gray-800'
-                }`}>
+            <div className="max-w-2xl mx-auto p-8 rounded-lg shadow-lg bg-gray-50">
+                <h3 className="text-2xl font-semibold mb-6 text-gray-800">
                     Send me any message (currently working)
                 </h3>
                 
@@ -270,9 +249,7 @@ const Contacts = ({ darkMode }) => {
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                     <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                            darkMode ? 'text-gray-200' : 'text-gray-700'
-                        }`}>
+                        <label className="block text-sm font-medium mb-2 text-gray-700">
                             Name *
                         </label>
                         <input
@@ -280,11 +257,7 @@ const Contacts = ({ darkMode }) => {
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${
-                                darkMode 
-                                    ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                                    : 'bg-white border-gray-300 text-gray-900'
-                            } ${formErrors.name ? 'border-red-500' : ''}`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 bg-white border-gray-300 text-gray-900 ${formErrors.name ? 'border-red-500' : ''}`}
                             placeholder="Your name"
                         />
                         {formErrors.name && (
@@ -293,9 +266,7 @@ const Contacts = ({ darkMode }) => {
                     </div>
                     
                     <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                            darkMode ? 'text-gray-200' : 'text-gray-700'
-                        }`}>
+                        <label className="block text-sm font-medium mb-2 text-gray-700">
                             Email *
                         </label>
                         <input
@@ -303,11 +274,7 @@ const Contacts = ({ darkMode }) => {
                             name="email"
                             value={formData.email}
                             onChange={handleInputChange}
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 ${
-                                darkMode 
-                                    ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                                    : 'bg-white border-gray-300 text-gray-900'
-                            } ${formErrors.email ? 'border-red-500' : ''}`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 bg-white border-gray-300 text-gray-900 ${formErrors.email ? 'border-red-500' : ''}`}
                             placeholder="your.email@example.com"
                         />
                         {formErrors.email && (
@@ -316,9 +283,7 @@ const Contacts = ({ darkMode }) => {
                     </div>
                     
                     <div>
-                        <label className={`block text-sm font-medium mb-2 ${
-                            darkMode ? 'text-gray-200' : 'text-gray-700'
-                        }`}>
+                        <label className="block text-sm font-medium mb-2 text-gray-700">
                             Message *
                         </label>
                         <textarea
@@ -326,11 +291,7 @@ const Contacts = ({ darkMode }) => {
                             value={formData.message}
                             onChange={handleInputChange}
                             rows={5}
-                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical ${
-                                darkMode 
-                                    ? 'bg-gray-600 border-gray-500 text-white placeholder-gray-400' 
-                                    : 'bg-white border-gray-300 text-gray-900'
-                            } ${formErrors.message ? 'border-red-500' : ''}`}
+                            className={`w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-colors duration-200 resize-vertical bg-white border-gray-300 text-gray-900 ${formErrors.message ? 'border-red-500' : ''}`}
                             placeholder="Your message..."
                         />
                         {formErrors.message && (
@@ -344,9 +305,7 @@ const Contacts = ({ darkMode }) => {
                         className={`w-full py-3 px-6 rounded-lg font-medium transition-all duration-200 transform hover:scale-105 ${
                             isSubmitting
                                 ? 'bg-gray-400 cursor-not-allowed'
-                                : darkMode
-                                    ? 'bg-blue-600 hover:bg-blue-700 text-white'
-                                    : 'bg-blue-500 hover:bg-blue-600 text-white'
+                                : 'bg-blue-500 hover:bg-blue-600 text-white'
                         }`}
                     >
                         {isSubmitting ? (
