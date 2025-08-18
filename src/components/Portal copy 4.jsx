@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 
 const Portal = () => {
     // Gradient parameters - adjust these to test different effects
-    const CIRCLE_RADIUS = 70 // Size of the reveal circle in pixels
+    const CIRCLE_RADIUS = 130 // Size of the reveal circle in pixels
     const CENTER_OPACITY = 1 // Opacity at the center of the circle (0-1)
     const MID_OPACITY = 0.4 // Opacity at 40% radius (0-1)
     const OUTER_OPACITY = 0.1 // Opacity at 70% radius (0-1)
@@ -61,24 +61,24 @@ const Portal = () => {
         // Base stable gradient (center remains calm)
         const baseGradient = `radial-gradient(circle ${CIRCLE_RADIUS}px at ${mousePosition.x}px ${mousePosition.y}px, 
             rgba(0,0,0,${CENTER_OPACITY}) 0%, 
-            rgba(0,0,0,${CENTER_OPACITY * 0.9}) 10%, 
+            rgba(0,0,0,${CENTER_OPACITY * 0.9}) 20%, 
             rgba(0,0,0,${MID_OPACITY}) ${MID_STOP}%, 
             rgba(0,0,0,${OUTER_OPACITY}) ${OUTER_STOP}%, 
             transparent 100%)`
 
         // Create chaos layers with increasing entropy toward edges
-        for (let layer = 0; layer < 5; layer++) {
-            const chaosIntensity = layer / 5 // 0 to 1
-            const frequency = 15 + layer * 4 // Higher frequency for outer layers
-            const amplitude = layer * 2 // Stronger distortions for outer layers
+        for (let layer = 0; layer < 8; layer++) {
+            const chaosIntensity = layer / 8 // 0 to 1
+            const frequency = 15 + layer * 5 // Higher frequency for outer layers
+            const amplitude = layer * 3 // Stronger distortions for outer layers
             
             // Generate random distortion points around the gradient
             const distortions = []
-            for (let i = 0; i < 8; i++) {
-                const angle = (i / 8) * Math.PI * 2
-                const radiusBase = CIRCLE_RADIUS * (0.3 + chaosIntensity * 0.3) // Start chaos from 30%, max at 60%
+            for (let i = 0; i < 12; i++) {
+                const angle = (i / 12) * Math.PI * 2
+                const radiusBase = CIRCLE_RADIUS * (0.4 + chaosIntensity * 0.6) // Start chaos from 40% radius
                 const chaosOffset = Math.sin(turbulenceTime * frequency + i + layer) * amplitude
-                const radius = Math.min(CIRCLE_RADIUS, radiusBase + chaosOffset) // Clamp to max radius
+                const radius = radiusBase + chaosOffset
                 
                 const x = mousePosition.x + Math.cos(angle + turbulenceTime * (2 + layer)) * radius
                 const y = mousePosition.y + Math.sin(angle + turbulenceTime * (2 + layer)) * radius
@@ -88,9 +88,7 @@ const Portal = () => {
                 const chaosOpacity = Math.sin(turbulenceTime * frequency * 2 + i * layer) * chaosIntensity * 0.3
                 const opacity = Math.max(0, baseOpacity + chaosOpacity)
                 
-                // Ensure percentage doesn't exceed 100%
-                const radiusPercent = Math.min(100, (radius / CIRCLE_RADIUS) * 100)
-                distortions.push(`rgba(0,0,0,${opacity}) ${radiusPercent}%`)
+                distortions.push(`rgba(0,0,0,${opacity}) ${(radius / CIRCLE_RADIUS) * 100}%`)
             }
             
             // Create chaotic gradient layer
@@ -130,7 +128,9 @@ const Portal = () => {
                     maskImage: generateChaoticGradient(),
                     WebkitMaskImage: generateChaoticGradient(),
                     transition: isHovered ? 'none' : `mask-image ${TRANSITION_DURATION}s ease-out, -webkit-mask-image ${TRANSITION_DURATION}s ease-out`,
-                    filter: `blur(${BLUR_AMOUNT}px) brightness(${BRIGHTNESS}) contrast(${CONTRAST})`
+                    filter: `blur(${BLUR_AMOUNT}px) brightness(${BRIGHTNESS}) contrast(${CONTRAST}) ${
+                        isHovered ? `contrast(1.4) saturate(1.2) hue-rotate(${Math.sin(turbulenceTime * 3) * 10}deg)` : ''
+                    }`
                 }}
             />
         </div>
