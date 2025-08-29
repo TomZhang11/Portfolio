@@ -111,7 +111,7 @@ const Skills = () => {
             </h2>
             <div className="mx-auto mb-8 max-w-6xl">
                 <p className="text-lg leading-relaxed text-gray-600">
-                I like to develop algorithms and deliver nice user experiences.
+                I am a genius developer.
                 </p>
             </div>
 
