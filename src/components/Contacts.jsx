@@ -204,7 +204,7 @@ const Contacts = () => {
             </h2>
             
             <p className="text-lg leading-relaxed mb-12 max-w-2xl mx-auto text-gray-600">
-                I am always open to chat, with anyone.
+                I am always open to chat.
             </p>
 
             {/* Social Links */}

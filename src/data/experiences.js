@@ -20,7 +20,7 @@ export const experiences = {
         items: [
             {
                 title: "Software Developer Intern, Microart Services Inc. (Sep 2025 - Dec 2025)",
-                details: "Incoming internship in Fall 2025. I will be using python to develop software.",
+                details: "Developed business internal softare using python and plotly.",
                 images: []
             }
         ]

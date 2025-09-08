@@ -59,9 +59,9 @@ const Main = () => {
                 <Experience />
             </div>
             
-            <div id="books" className={sectionClassName('books')}>
+            {/* <div id="books" className={sectionClassName('books')}>
                 <Books />
-            </div>
+            </div> */}
             
             <div id="contacts" className={sectionClassName('contacts')}>
                 <Contacts />
