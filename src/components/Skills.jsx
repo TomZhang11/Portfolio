@@ -111,7 +111,7 @@ const Skills = () => {
             </h2>
             <div className="mx-auto mb-8 max-w-6xl">
                 <p className="text-lg leading-relaxed text-gray-600">
-                I am a genius developer.
+                My unique ability is to abstract ideas in one field and apply them cross domains.
                 </p>
             </div>
 
