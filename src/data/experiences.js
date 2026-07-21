@@ -4,17 +4,6 @@ export const experiences = {
         description: "Currently focusing on deepening my knowledge in programming and working on personal projects. Looking\
         for internship in Summer 2026 (May 2026 - Aug 2026)."
     },
-    university: {
-        title: "University Year 1 (2024-2025)",
-        items: [
-            {
-                title: "Junior Software Engineer, Krachi's Space Technologies (Sep 2024 - Dec 2024)",
-                details: "Worked as a full-stack developer at a software company and was responsible for both client-side\
-                and server-side development.",
-                images: ["/exp.png", "/exp-1.png"]
-            }
-        ]
-    },
     universityYear2: {
         title: "University Year 2 (2025-2026)",
         items: [
