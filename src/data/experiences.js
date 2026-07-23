@@ -1,21 +1,10 @@
 export const experiences = {
     current: {
-        title: "What I'm up to now (2025)",
-        description: "Currently focusing on deepening my knowledge in programming and working on personal projects. Looking\
-        for internship in Summer 2026 (May 2026 - Aug 2026)."
-    },
-    universityYear2: {
-        title: "University Year 2 (2025-2026)",
-        items: [
-            {
-                title: "Software Developer Intern, Microart Services Inc. (Sep 2025 - Dec 2025)",
-                details: "Developed business internal softare using python and plotly.",
-                images: []
-            }
-        ]
+        title: "",
+        description: ""
     },
     highSchool: {
-        title: "High School Era (2023-2024)",
+        title: "High School (2023-2024)",
         items: [
             {
                 title: "Python Developer, Centennial Collegiate (Apr 2023 - Jun 2024)",

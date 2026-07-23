@@ -5,7 +5,7 @@ const About = () => {
             <div className="mx-auto">
                 <p className="text-lg text-gray-600 leading-relaxed">
                     I'm an {new Date().getFullYear() - 2007} years old guy in tech who sometimes get
-                    absorbed in thoughts regarding psychology, religion, and philosophy.
+                    absorbed in thoughts regarding .
                 </p>
             </div>
         </section>
