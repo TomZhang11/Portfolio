@@ -119,11 +119,6 @@ function App() {
                             </li>
                         ))}
                     </ul>
-                    <p className="mt-4 text-sm">
-                        <a href="/transcript.pdf" target="_blank" rel="noopener noreferrer" className="text-neutral-500 hover:underline">
-                            Transcript
-                        </a>
-                    </p>
                 </Section>
 
                 <footer className="mt-20 text-xs text-neutral-400">
