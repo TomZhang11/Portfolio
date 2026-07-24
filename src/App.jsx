@@ -23,7 +23,7 @@ const AboutItem = ({ children }) => (
 )
 
 const ProjectCard = ({ project }) => (
-    <article className="flex flex-col rounded-xl border border-neutral-200 bg-white/70 p-5 transition duration-300 hover:-translate-y-0.5 hover:border-neutral-300 hover:shadow-md sm:p-6">
+    <article className="flex flex-col rounded-xl border border-neutral-200 bg-white/70 p-5 sm:p-6">
         <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 className="font-medium text-neutral-900">{project.title}</h3>
             <span className="text-xs text-neutral-400">{project.period}</span>
@@ -54,11 +54,11 @@ const ProjectCard = ({ project }) => (
 
 function App() {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-indigo-50/70 via-white to-white selection:bg-indigo-100">
+        <div className="min-h-screen bg-white selection:bg-indigo-100">
             <main className="mx-auto max-w-3xl px-6 py-20 text-neutral-900 sm:py-28">
                 <header className="motion-safe:animate-fade-up">
                     <h1 className="text-3xl font-semibold tracking-tight sm:text-4xl">
-                        Tom Zhang<span className="text-indigo-600">.</span>
+                        Tom Zhang
                     </h1>
                     <p className="mt-3 max-w-2xl leading-relaxed text-neutral-600">
                         Software developer in Waterloo, working on AI Chat feature for
