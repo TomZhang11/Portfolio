@@ -6,7 +6,10 @@ export const projects = [
         period: "Grade 11 · 2023",
         description:
             "A search algorithm that solves Google Minesweeper perfectly — clears the whole board in under 15 seconds.",
-        link: "https://github.com/TomZhang11/MinesweeperAI",
+        links: [
+            { label: "View on GitHub", href: "https://github.com/TomZhang11/MinesweeperAI" },
+            { label: "Watch the demo", href: "https://www.youtube.com/watch?v=zC_69iGVnCo" },
+        ],
         media: ["/ms.png", "/ms.mp4"],
     },
     {
@@ -14,7 +17,12 @@ export const projects = [
         period: "High school · 2023–24",
         description:
             "Built for my school's vice-principal: turns raw schedules into a clean Excel sheet, replacing hours of manual work. Earned an honorarium, a reference letter, and a hoodie.",
-        link: "https://github.com/TomZhang11/Schedule-Organizer",
+        links: [
+            {
+                label: "View on GitHub",
+                href: "https://github.com/TomZhang11/Schedule-Organizer",
+            },
+        ],
         media: ["/exp1.png", "/exp1-1.jpg", "/exp1-2.png", "/exp1-3.jpg", "/exp1-4.jpg"],
     },
 ];

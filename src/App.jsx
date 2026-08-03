@@ -29,20 +29,25 @@ const ProjectCard = ({ project }) => (
             <span className="text-xs text-neutral-400">{project.period}</span>
         </div>
         <p className="mt-2 text-sm leading-relaxed text-neutral-600">{project.description}</p>
-        <a
-            href={project.link}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group mt-3 inline-block text-sm text-indigo-600 hover:underline"
-        >
-            View on GitHub{' '}
-            <span
-                aria-hidden="true"
-                className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-            >
-                ↗
-            </span>
-        </a>
+        <div className="mt-3 flex flex-wrap gap-x-5 gap-y-1">
+            {project.links.map((link) => (
+                <a
+                    key={link.href}
+                    href={link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group text-sm text-indigo-600 hover:underline"
+                >
+                    {link.label}{' '}
+                    <span
+                        aria-hidden="true"
+                        className="inline-block transition-transform duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                    >
+                        ↗
+                    </span>
+                </a>
+            ))}
+        </div>
         {/* mt-auto pins carousels to the card bottom so they align across the row */}
         {project.media?.length > 0 && (
             <div className="mt-auto pt-4">
